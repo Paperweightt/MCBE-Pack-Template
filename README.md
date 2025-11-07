@@ -1,17 +1,17 @@
-## delete this
+### MCBE Pack Template
 
 A simple setup for mcbe addon development for minecraft windows
 
-# setup
+## setup
 
 ```powershell
-
-
+# change pack_name to the name of your project
+gh repo clone Paperweightt/MCBE-Pack-Template pack_name
+.\pack_name\.build\init.ps1
 ```
 
-# goals
+## goals
 
-Setup Symlinks and a base file organization
-The goal for this is to be as minimal as possible
-Anyone should be able to read the setup file and change as needed
-All setup files are disposable
+Setup symlinks so resource pack and behavior pack are located in one place
+Setup manifest.json files with sensible defaults
+Keep setup in one file only for simplicity
