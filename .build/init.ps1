@@ -1,15 +1,27 @@
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$packs = Split-Path -Parent $scriptDir
-$pack_name = Split-Path -Leaf $packs
+$packDir = Split-Path -Parent $scriptDir
+$pack_name = Split-Path -Leaf $packDir
 $mojang = "$home/AppData/Roaming/Minecraft Bedrock/Users/Shared/games/com.mojang"
 
-#symlinks
-Remove-Item -r -Path "$mojang/development_behavior_packs/$pack_name" 
-New-Item -ItemType SymbolicLink `
-    -Path "$mojang/development_behavior_packs/$pack_name" `
-    -Target "$packs/$pack_name/BP"
+$dev = $true
 
-Remove-Item -r -Path $mojang/development_resource_packs/$pack_name
-New-Item -ItemType SymbolicLink `
-    -Path "$mojang/development_resource_packs/$pack_name" `
-    -Target "$packs/$pack_name/RP"
+echo $pack
+
+#symlinks
+# Remove-Item -r -Path "$mojang/development_behavior_packs/$pack_name" 
+# New-Item -ItemType SymbolicLink `
+#     -Path "$mojang/development_behavior_packs/$pack_name" `
+#     -Target "$packDir/BP"
+#
+# Remove-Item -r -Path "$mojang/development_resource_packs/$pack_name"
+# New-Item -ItemType SymbolicLink `
+#     -Path "$mojang/development_resource_packs/$pack_name" `
+#     -Target "$packDir/RP"
+
+#uuid
+
+echo "$packDir/BP/manifest.json" 
+
+Get-Content "$packDir/BP/manifest.json" `
+| ForEach-Object { $_ -replace "`$uuid", [guid]::NewGuid() } `
+| Set-Content "$packDir/BP/manifest.json"

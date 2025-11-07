@@ -1,0 +1,38 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "$pack_name",
+    "version": [1, 0, 0],
+    "description": "$desc",
+    "uuid": "$uuid",
+    "min_engine_version": [1, 20, 30]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "$uuid",
+      "version": [1, 0, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "$uuid",
+      "version": [1, 0, 3],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "version": [1, 0, 0],
+      "uuid": "$uuid"
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.19.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.1.0"
+    }
+  ]
+}
