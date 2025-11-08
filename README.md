@@ -1,6 +1,7 @@
 ### MCBE Pack Template
 
-A simple setup for mcbe addon development for minecraft windows
+A simple setup automization for mcbe addon development for minecraft windows.
+Short sweet simple.
 
 ## setup
 
@@ -10,8 +11,10 @@ A simple setup for mcbe addon development for minecraft windows
 > .\pack_name\.build\init.ps1
 > ```
 
-## goals
+## features
 
-> - Setup symlinks so resource pack and behavior pack are located in one place
-> - Setup manifest.json files with sensible defaults
-> - Keep setup within one file
+> - Setup symlinks so resource pack and behavior pack are located in one folder
+> - Setup manifest.json files with up to date sensible defaults
+> - Setup uuids for manifest.json files
+> - Setup pack linking
+> - simple easy to edit init and clean files
