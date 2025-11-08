@@ -4,8 +4,8 @@
     "name": "$pack_name",
     "version": [1, 0, 0],
     "description": "$desc",
-    "uuid": "$uuid",
-    "min_engine_version": [1, 20, 30]
+    "uuid": "$bp_uuid",
+    "min_engine_version": [1, 21, 121]
   },
   "modules": [
     {
@@ -17,14 +17,14 @@
       "type": "script",
       "language": "javascript",
       "uuid": "$uuid",
-      "version": [1, 0, 3],
+      "version": [1, 0, 0],
       "entry": "scripts/main.js"
     }
   ],
   "dependencies": [
     {
       "version": [1, 0, 0],
-      "uuid": "$uuid"
+      "uuid": "$rp_uuid"
     },
     {
       "module_name": "@minecraft/server",

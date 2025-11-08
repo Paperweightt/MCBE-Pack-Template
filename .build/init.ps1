@@ -15,13 +15,19 @@ New-Item -ItemType SymbolicLink `
     -Target "$packDir/RP"
 
 #manifest.json
+$bp_uuid = [guid]::NewGuid().ToString()
+$rp_uuid = [guid]::NewGuid().ToString()
 
 (Get-Content "$packDir/BP/manifest.json") `
  -replace '\$uuid', {[guid]::NewGuid().ToString()} `
  -replace '\$pack_name', $pack_name `
+ -replace '\$bp_uuid', $bp_uuid `
+ -replace '\$rp_uuid', $rp_uuid `
 | Set-Content "$packDir/BP/manifest.json" 
 
 (Get-Content "$packDir/RP/manifest.json") `
  -replace '\$uuid', {[guid]::NewGuid().ToString()} `
  -replace '\$pack_name', $pack_name `
+ -replace '\$bp_uuid', $bp_uuid `
+ -replace '\$rp_uuid', $rp_uuid `
 | Set-Content "$packDir/RP/manifest.json" 

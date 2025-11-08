@@ -3,8 +3,8 @@
   "header": {
     "name": "$pack_name",
     "description": "$desc",
-    "uuid": "$uuid",
-    "version": [1, 0, 8],
+    "uuid": "$rp_uuid",
+    "version": [1, 13, 0],
     "min_engine_version": [1, 12, 1]
   },
   "modules": [
@@ -12,6 +12,12 @@
       "type": "resources",
       "uuid": "$uuid",
       "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "version": [1, 0, 0],
+      "uuid": "$bp_uuid"
     }
   ]
 }
